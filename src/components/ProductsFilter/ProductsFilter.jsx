@@ -18,7 +18,7 @@ const ProductsFilter = ({ onFilter }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onFilter(filterParams); // Исправлено здесь
+    onFilter(filterParams);
   };
 
   return (
