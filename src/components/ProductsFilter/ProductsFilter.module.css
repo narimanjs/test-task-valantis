@@ -1,0 +1,35 @@
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #007bff; /* Синий цвет фона */
+  color: white; /* Белый текст */
+  border: none; /* Убираем границу */
+  border-radius: 5px; /* Скругляем углы */
+  cursor: pointer; /* Курсор в виде указателя */
+  font-size: 16px; /* Размер шрифта */
+  transition: background-color 0.3s; /* Плавное изменение цвета фона */
+}
+.filterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Расстояние между полями формы */
+  max-width: 400px; /* Максимальная ширина формы */
+  margin: 20px auto; /* Центрирование формы на странице */
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.filterGroup label {
+  font-weight: bold; /* Жирный текст для названий */
+  margin-bottom: 5px; /* Отступ от названия до инпута */
+}
+
+.filterGroup input {
+  padding: 8px; /* Отступы внутри инпута */
+  border: 1px solid #ccc; /* Граница инпута */
+  border-radius: 4px; /* Скругление углов инпута */
+  font-size: 16px; /* Размер текста в инпуте */
+}
