@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import styles from './ProductsFilter.module.css';
 
 const ProductsFilter = ({ onFilter }) => {
-  const [filterParams, setFilterParams] = useState({
-    product: '',
-    price: '',
-    brand: '',
-  });
+  const [filterParams, setFilterParams] = useState({});
 
   const handleChange = e => {
     const { name, value } = e.target;
-    setFilterParams(prev => ({
-      ...prev,
-      [name]: value,
-    }));
+    if (value === '' || value === null) {
+      delete filterParams[name];
+    } else {
+      setFilterParams(prev => ({
+        ...prev,
+        [name]: name === 'price' && value ? parseFloat(value) : value,
+      }));
+    }
   };
 
   const handleSubmit = e => {
