@@ -40,7 +40,7 @@ const ProductsPage = () => {
 
     setIsLoading(true);
     try {
-      const response = await filterItems({ action: 'filter', params: filters });
+      const response = await filterItems(filters);
       console.log('Ответ от API:', response); // Для проверки ответа от API
 
       if (Array.isArray(response) && response.length > 0) {
@@ -66,17 +66,18 @@ const ProductsPage = () => {
         </div>
       ) : (
         <ul className={styles.ProductList}>
-          {products.map((product, index) => (
-            <li
-              className={styles.ProductItem}
-              key={`${product.id}-${index}`}
-            >
-              <h2>{product.product}</h2>
-              <p>ID: {product.id}</p>
-              <p>Цена: {product.price}</p>
-              <p>Бренд: {product.brand || 'Не указан'}</p>
-            </li>
-          ))}
+          {products &&
+            products.map((product, index) => (
+              <li
+                className={styles.ProductItem}
+                key={`${product.id}-${index}`}
+              >
+                <h2>{product.product}</h2>
+                <p>ID: {product.id}</p>
+                <p>Цена: {product.price}</p>
+                <p>Бренд: {product.brand || 'Не указан'}</p>
+              </li>
+            ))}
         </ul>
       )}
       <div className={styles.Pagination}>
